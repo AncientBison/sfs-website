@@ -1,0 +1,14 @@
+{
+    "name": "Daniel Brown",
+    "title": "Data Scientist",
+    "description": "Analyzes data and builds predictive models.",
+    "socials": [
+        { "type": "email", "text": "daniel@example.com" },
+        { "type": "github", "text": "https://github.com/danielbrown" },
+        { "type": "slack", "text": "@danbrown" }
+    ],
+    "image": {
+        "src": "@assets/rembrandt.jpg",
+        "alt": "Originally spelled Rembrant"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Frank Taylor",
+    "title": "DevOps Engineer",
+    "description": "Implements and maintains CI/CD pipelines.",
+    "socials": [
+        { "type": "email", "text": "frank@example.com" },
+        { "type": "discord", "text": "Frank#6789" },
+        { "type": "github", "text": "https://github.com/franktaylor" }
+    ],
+    "image": {
+        "src": "@assets/van_gogh.jfif",
+        "alt": "No ear?"
+    }
+}

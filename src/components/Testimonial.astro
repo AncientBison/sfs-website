@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    testimonial: CollectionEntry<"testimonials">;
+}
+
+const { testimonial } = Astro.props;
+---
+
+<!-- Testimonial -->
+<div class="relative max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <!-- Blockquote -->
+    <blockquote class="text-center lg:mx-auto lg:w-3/5">
+        <div class="mt-6 lg:mt-10">
+            <p
+                class="relative text-xl sm:text-2xl md:text-3xl md:leading-normal font-medium text-gray-800"
+            >
+                <span
+                    class="relative z-10 italic text-gray-800 dark:text-neutral-200"
+                    >{testimonial.data.quote}</span
+                >
+            </p>
+        </div>
+
+        <footer class="mt-6">
+            <div class="font-semibold text-gray-800 dark:text-neutral-200">
+                {testimonial.data.author.name}
+            </div>
+            <div class="text-sm text-gray-500 dark:text-neutral-500">
+                {testimonial.data.author.title}
+            </div>
+        </footer>
+    </blockquote>
+    <!-- End Blockquote -->
+</div>
+<!-- End Testimonial -->

@@ -1,0 +1,65 @@
+---
+import Discord from "@icon/Discord";
+import Email from "@icon/Email";
+import Github from "./icons/Github.astro";
+import Phone from "./icons/Phone.astro";
+import Slack from "./icons/Slack.astro";
+import type { Social } from "@consts";
+import { socialType } from "@consts";
+
+interface Props {
+    social: Social;
+    text: string;
+}
+
+const { social, text } = Astro.props;
+---
+<social-button data-type={socialType[social]} data-text={text}>
+    <a
+        class="cursor-pointer hs-tooltip hs-tooltip-toggle inline-flex justify-center items-center size-8 text-sm font-semibold rounded-lg border border-gray-200 text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:border-neutral-700 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+        href={socialType[social] === "link" ? text : undefined}
+        target={socialType[social] === "link" ? "_blank" : undefined}
+    >
+        {
+            social === "discord" ? (
+                <Discord />
+            ) : social === "email" ? (
+                <Email />
+            ) : social === "github" ? (
+                <Github />
+            ) : social === "phone" ? (
+                <Phone />
+            ) : (
+                <Slack />
+            )
+        }
+
+        {socialType[social] === "copy" && (
+            <span id="tooltip-content" class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm dark:bg-neutral-700" role="tooltip">
+                Copy
+            </span>
+        )}
+    </a>
+</social-button>
+
+<script>
+    class SocialButton extends HTMLElement {
+        connectedCallback() {
+            const a = this.querySelector("a")!;
+            const tooltipContent = this.querySelector("#tooltip-content")!;
+
+            if (this.dataset.type === "copy") {
+                a.addEventListener("click", () => {
+                    navigator.clipboard.writeText(this.dataset.text!);
+                    tooltipContent.textContent = "Copied!";
+                });
+
+                a.addEventListener("mouseleave", () => {
+                    tooltipContent.textContent = "Copy";
+                })
+            }
+        }
+    }
+
+    customElements.define("social-button", SocialButton);
+</script>

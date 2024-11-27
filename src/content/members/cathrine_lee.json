@@ -1,0 +1,14 @@
+{
+    "name": "Catherine Lee",
+    "title": "UI/UX Designer",
+    "description": "Creates intuitive and visually appealing user interfaces.",
+    "socials": [
+        { "type": "email", "text": "catherine@example.com" },
+        { "type": "phone", "text": "+9876543210" },
+        { "type": "discord", "text": "Catherine#5678" }
+    ],
+    "image": {
+        "src": "@assets/pearl_earing.jpg",
+        "alt": "No one knows who that is"
+    } 
+}

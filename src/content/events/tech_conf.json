@@ -1,0 +1,11 @@
+{
+    "title": "Tech Conference 2024",
+    "description": "Join us for the latest in tech innovations.",
+    "link": "https://techconference2024.com",
+    "text": "Explore cutting-edge technology with industry leaders.",
+    "date": "2024-12-01T10:00:00Z",
+    "image": {
+        "src": "@assets/lightbulb_event.jpg",
+        "alt": "A crowd at a tech conference"
+    }
+}

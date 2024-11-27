@@ -1,0 +1,135 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    event: CollectionEntry<"events">;
+}
+
+const { event } = Astro.props;
+---
+
+<!-- Card -->
+<event-card>
+    <div
+        class="relative h-full overflow-hidden flex flex-col border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition rounded-xl pt-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
+        id="card"
+    >
+        <Image
+            class="w-full h-48 object-cover object-top rounded-xl duration-700 transition-[height] px-5"
+            src={event.data.image.src}
+            alt={event.data.image.alt}
+            id="image"
+        />
+        <span class="mb-6">
+            <div class="my-6 px-5">
+                <h3
+                    class="text-xl font-semibold text-gray-800 dark:text-neutral-300 dark:group-hover:text-white"
+                >
+                    {event.data.title}
+                </h3>
+                <p class="mt-5 text-gray-600 dark:text-neutral-400">
+                    {event.data.description}
+                </p>
+            </div>
+            <div class="mt-auto flex items-center gap-x-3 px-5">
+                <div>
+                    <h5 class="text-sm text-gray-800 dark:text-neutral-200">
+                        <date
+                            >{
+                                event.data.date.toLocaleString("en-US", {
+                                    weekday: "long",
+                                    month: "long",
+                                    day: "numeric",
+                                    year: "numeric",
+                                    hour: "numeric",
+                                    minute: "numeric",
+                                })
+                            }</date
+                        >
+                    </h5>
+                </div>
+            </div>
+        </span>
+        <span class="mb-6 hidden h-48" id="additional-content">
+            <div class="my-6 px-5">
+                <p class="mt-5 text-gray-600 dark:text-neutral-400">
+                    Signup <a
+                        href={event.data.link}
+                        class="underline text-blue-500">here</a
+                    >!<br /><br />
+                    {event.data.text}
+                </p>
+            </div>
+        </span>
+        <div
+            id="openButton"
+            class="absolute bottom-0 h-6 cursor-pointer mt-2 w-full bt-2 border-gray-200 text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:border-neutral-700 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="mx-auto rotate-0 transition-transform"
+                id="chevron"><path d="m18 15-6-6-6 6"></path></svg
+            >
+        </div>
+    </div>
+</event-card>
+<!-- End Card -->
+
+<script>
+    class EventCard extends HTMLElement {
+        clicked: boolean = false;
+
+        connectedCallback() {
+            const card = this.querySelector<HTMLElement>("#card")!;
+            const image = this.querySelector<HTMLImageElement>("#image")!;
+            const chevron = this.querySelector<SVGElement>("#chevron")!;
+            const additionalContent = this.querySelector<HTMLElement>(
+                "#additional-content"
+            )!;
+
+            card.addEventListener("mouseenter", () => {
+                this.openOrClose(image, chevron, additionalContent);
+            });
+
+            card.addEventListener("mouseleave", () => {
+                this.openOrClose(image, chevron, additionalContent);
+            });
+
+            card.addEventListener("click", () => {
+                this.clicked = !this.clicked;
+                this.openOrClose(image, chevron, additionalContent);
+            });
+
+            const initialHeight = card.offsetHeight;
+            card.style.height = `${initialHeight}px`;
+        }
+
+        openOrClose(
+            image: HTMLImageElement,
+            chevron: SVGElement,
+            additionalContent: HTMLElement
+        ) {
+            if (this.clicked) {
+                image.classList.add("h-0");
+                image.classList.remove("h-48");
+                chevron.classList.add("rotate-180");
+                additionalContent.classList.remove("hidden");
+            } else {
+                image.classList.remove("h-0");
+                image.classList.add("h-48");
+                chevron.classList.remove("rotate-180");
+            }
+        }
+    }
+
+    customElements.define("event-card", EventCard);
+</script>
