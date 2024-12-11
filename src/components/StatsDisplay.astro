@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content"
+
+const numberOfEventsDone = (await getCollection("events")).length;
+const hoursTaught = 5;
+const studentsTaught = 20;
+
+---
+
+<!-- Features -->
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <!-- Grid -->
+    <div class="grid gap-6 grid-cols-2 sm:gap-12 lg:grid-cols-3 lg:gap-8">
+      <!-- Stats -->
+      <div>
+        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Students Taught</h4>
+        <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-blue-600">{studentsTaught}</p>
+        <p class="mt-1 text-gray-500 dark:text-neutral-500">helping teaching</p>
+      </div>
+      <!-- End Stats -->
+  
+      <!-- Stats -->
+      <div>
+        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Events</h4>
+        <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-blue-600">{numberOfEventsDone}</p>
+        <p class="mt-1 text-gray-500 dark:text-neutral-500">to educate our community</p>
+      </div>
+      <!-- End Stats -->
+  
+      <!-- Stats -->
+      <div>
+        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Hours Taught</h4>
+        <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-blue-600">{hoursTaught}</p>
+        <p class="mt-1 text-gray-500 dark:text-neutral-500">with detication to each one</p>
+      </div>
+      <!-- End Stats -->
+    </div>
+    <!-- End Grid -->
+  </div>
+  <!-- End Features -->

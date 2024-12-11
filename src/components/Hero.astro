@@ -9,7 +9,10 @@ import ArrowRight from "./ArrowRight.astro";
     <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
         <div class="max-w-2xl text-center mx-auto">
             <!-- Title -->
-            <div class="mt-5 max-w-2xl">
+            <div class="mt-5 max-w-2xl"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-delay="0"
+            data-aos="flip-up">
                 <h1
                     class="block font-semibold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-neutral-200"
                 >
@@ -28,14 +31,14 @@ import ArrowRight from "./ArrowRight.astro";
             <div class="mt-8 gap-3 flex justify-center">
                 <a
                     class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                    href="#"
+                    href="/events"
                 >
                     Events
                     <ArrowRight />
                 </a>
                 <a
                     class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-                    href="#"
+                    href="/about"
                 >
                     About Us
                     <ArrowRight />
