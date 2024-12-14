@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
     title: string;
     description: string;
     image: {
-        src: string;
+        src: ImageMetadata;
         alt: string;
     },
     link: string;
@@ -15,7 +17,7 @@ const { title, description, image, link } = Astro.props;
 <!-- Card -->
 <a data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="0" class="group flex flex-col focus:outline-none" href={link}>
     <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
-      <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl" src={image.src} alt={image.alt}>
+      <Image class="size-full absolute top-0 start-0 object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out rounded-xl" {...image} />
     </div>
 
     <div class="mt-7">

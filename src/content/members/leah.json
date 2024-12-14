@@ -1,0 +1,12 @@
+{
+    "name": "Leah Wang",
+    "title": "Club Leader",
+    "description": "Hi! My name is Leah Wang and I am a senior at Needham High School.  I enjoy spending time with my friends and going on hikes. I love studying math and computer science and you’re most likely to find me studying at Tatte.",
+    "socials": [
+        { "type": "email", "text": "lyw251@students.needham.k12.ma.us" }
+    ],
+    "image": {
+        "src": "@assets/leah.png",
+        "alt": "No ear?"
+    }
+}

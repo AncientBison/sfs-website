@@ -1,9 +1,11 @@
 ---
 import ThreeCardsCard from "./ThreeCardsCard.astro";
+import NeedhamFreePublicLibraryImage from "@assets/NeedhamFreePublicLibrary.jpeg";
+import NeedhamCouncilOnAging from "@assets/NeedhamCouncilOnAging.jpg";
 ---
 
 <!-- Card Blog -->
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto w-full">
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto w-full flex justify-center flex-col">
     <!-- Title -->
     <div class="max-w-2xl mx-auto text-center mb-2 lg:mb-4">
         <h2
@@ -15,8 +17,26 @@ import ThreeCardsCard from "./ThreeCardsCard.astro";
     <!-- End Title -->
 
     <!-- Grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-flow-col gap-6">
         <ThreeCardsCard
+            title="Needham Public Library"
+            description="Unique, engaging lessons created and led by high school students, revolving around a particular field in STEM."
+            image={{
+                src: NeedhamFreePublicLibraryImage,
+                alt: "Students helping out at the Needham Public Library.",
+            }}
+            link="https://needhamlibrary.org/"
+        />
+        <ThreeCardsCard
+            title="Needham Council on Aging"
+            description="High school students team up with seniors to explore the world of modern technology through engaging, hands-on presentations."
+            image={{
+                src: NeedhamCouncilOnAging,
+                alt: "Students helping out at the Needham Council of Aging.",
+            }}
+            link="https://www.needhamma.gov/519/Council-on-Aging"
+        />
+        <!-- <ThreeCardsCard
             title="Cool"
             description="A description of the thign"
             image={{
@@ -24,25 +44,7 @@ import ThreeCardsCard from "./ThreeCardsCard.astro";
                 alt: "idklol",
             }}
             link="https://example.com"
-        />
-        <ThreeCardsCard
-            title="Cool"
-            description="A description of the thign"
-            image={{
-                src: "https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80",
-                alt: "idklol",
-            }}
-            link="https://example.com"
-        />
-        <ThreeCardsCard
-            title="Cool"
-            description="A description of the thign"
-            image={{
-                src: "https://images.unsplash.com/photo-1542125387-c71274d94f0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=560&q=80",
-                alt: "idklol",
-            }}
-            link="https://example.com"
-        />
+        /> -->
     </div>
     <!-- End Grid -->
 </div>

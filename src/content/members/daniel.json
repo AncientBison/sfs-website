@@ -1,0 +1,12 @@
+{
+    "name": "Daniel Golmohammadi",
+    "title": "Club Leader",
+    "description": "Hey guys! My name is Daniel Golmohammadi and I am a junior at Needham High School. I enjoy playing ping pong and listening to music in my free time. My favorite classes are always math and statistics classes. You are most likely to find me at the Boston Public Library working with a cup of coffee.",
+    "socials": [
+        { "type": "email", "text": "dg261@students.needham.k12.ma.us" }
+    ],
+    "image": {
+        "src": "@assets/daniel.png",
+        "alt": "The scream!"
+    } 
+}

@@ -2,9 +2,9 @@
 import { getCollection } from "astro:content"
 
 const numberOfEventsDone = (await getCollection("events")).length;
-const hoursTaught = 5;
-const studentsTaught = 20;
-
+const clubMembers = 5;
+const studentsTaught = 60;
+const missionsToIncreaseStemLiteracy = 1;
 ---
 
 <!-- Features -->
@@ -21,17 +21,25 @@ const studentsTaught = 20;
   
       <!-- Stats -->
       <div>
-        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Events</h4>
-        <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-blue-600">{numberOfEventsDone}</p>
-        <p class="mt-1 text-gray-500 dark:text-neutral-500">to educate our community</p>
+        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Members</h4>
+        <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-blue-600">{clubMembers}</p>
+        <p class="mt-1 text-gray-500 dark:text-neutral-500">happy to help</p>
       </div>
       <!-- End Stats -->
   
       <!-- Stats -->
       <div>
-        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Hours Taught</h4>
-        <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-blue-600">{hoursTaught}</p>
+        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Events</h4>
+        <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-blue-600">{numberOfEventsDone}</p>
         <p class="mt-1 text-gray-500 dark:text-neutral-500">with detication to each one</p>
+      </div>
+      <!-- End Stats -->
+
+      <!-- Stats -->
+      <div>
+        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Missions</h4>
+        <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-blue-600">{missionsToIncreaseStemLiteracy}</p>
+        <p class="mt-1 text-gray-500 dark:text-neutral-500">to increase STEM literacy</p>
       </div>
       <!-- End Stats -->
     </div>

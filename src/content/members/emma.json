@@ -1,0 +1,12 @@
+{
+    "name": "Emma Hua",
+    "title": "Club Leader",
+    "description": "Hi everyone!  My name is Emma Hua and I’m a junior at Needham High School. I enjoy traveling, playing the flute, and spending time with friends. I’m currently studying AP Chemistry and AP Biology, and you’re most likely to find me cramming at the library.",
+    "socials": [
+        { "type": "email", "text": "eh262@students.needham.k12.ma.us" }
+    ],
+    "image": {
+        "src": "@assets/emma.png",
+        "alt": "Beethoven being beethoven"
+    } 
+}
