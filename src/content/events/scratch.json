@@ -1,11 +1,12 @@
 {
     "title": "Scratch Programming",
     "description": "Students engaged in an introduction to Scratch programming and learned the basics of coding in a fun and interactive way, with guidance from experienced coaches.",
-    "date": "2024-11-10T00:00:00Z",
+    "startDate": "2024-11-10T18:00:00.000Z",
+    "endDate": "2024-11-10T19:30:00.000Z",
     "text": "Led by Daniel G, Ilan B",
     "link": "#",
-    "image": {
-        "src": "@assets/scratch.jpg",
+    "images": [{
+        "src": "@assets/scratch/scratch_1.jpeg",
         "alt": "Scratch Programming event"
-    }
+    }]
 }

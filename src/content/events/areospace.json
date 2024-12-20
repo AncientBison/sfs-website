@@ -1,11 +1,26 @@
 {
     "title": "Introduction to Aerospace Engineering",
     "description": "A creative, hands-on lesson that explored the basic principles of flight. Students built and tested paper airplanes and model rockets, engaging in problem-solving and revision of their original designs.",
-    "date": "2024-12-06T00:00:00Z",
+    "startDate": "2024-12-06T18:00:00.000Z",
+    "endDate": "2024-12-06T19:30:00.000Z",
     "text": "Led by Brandon H, Ilan B",
     "link": "#",
-    "image": {
-        "src": "@assets/areospace.jpg",
-        "alt": "Introduction to Aerospace Engineering event"
-    }
+    "images": [
+        {
+            "src": "@assets/areospace/areospace_1.jpeg",
+            "alt": "Introduction to Aerospace Engineering event"
+        },
+        {
+            "src": "@assets/areospace/areospace_2.jpeg",
+            "alt": "Introduction to Aerospace Engineering event"
+        },
+        {
+            "src": "@assets/areospace/areospace_3.jpeg",
+            "alt": "Introduction to Aerospace Engineering event"
+        },
+        {
+            "src": "@assets/areospace/areospace_4.jpeg",
+            "alt": "Introduction to Aerospace Engineering event"
+        }
+    ]
 }

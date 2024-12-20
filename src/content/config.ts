@@ -25,11 +25,12 @@ const eventCollection = defineCollection({
             description: z.string(),
             link: z.string(),
             text: z.string(),
-            date: z.coerce.date(),
-            image: z.object({
+            startDate: z.coerce.date(),
+            endDate: z.coerce.date(),
+            images: z.array(z.object({
                 src: image(),
                 alt: z.string(),
-            }),
+            })),
         }),
 });
 

@@ -15,12 +15,43 @@ const { event } = Astro.props;
         class="relative h-full overflow-hidden flex flex-col border border-gray-200 hover:border-transparent hover:shadow-lg focus:outline-none focus:border-transparent focus:shadow-lg transition rounded-xl pt-5 dark:border-neutral-700 dark:hover:border-transparent dark:hover:shadow-black/40 dark:focus:border-transparent dark:focus:shadow-black/40"
         id="card"
     >
-        <Image
-            class="w-full h-48 object-cover object-top rounded-xl duration-700 transition-[height] px-5"
-            src={event.data.image.src}
-            alt={event.data.image.alt}
-            id="image"
-        />
+        <div>
+            <!-- Slider -->
+            <div
+                data-hs-carousel='{
+                    "loadingClasses": "opacity-0",
+                    "dotsItemClasses": "hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500",
+                    "isAutoPlay": true
+                }'
+                class="w-full h-48 duration-700 transition-[height] px-5 relative"
+                id="image"
+            >
+                <div
+                    class="hs-carousel relative h-full w-full bg-white rounded-lg overflow-hidden"
+                >
+                    <div
+                        class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0"
+                    >
+                        {event.data.images.map(image => (
+                            <div class="hs-carousel-slide flex justify-center">
+                                <Image
+                                    class="object-cover object-top rounded-xl h-full"
+                                    src={image.src}
+                                    alt={image.alt}
+                                />
+                            </div>
+                        ))}
+
+                    </div>
+                </div>
+                <div
+                    id="carousel-pagination"
+                    class="transition-opacity duration-500 delay-75 hs-carousel-pagination flex justify-center absolute bottom-3 start-0 end-0 space-x-2"
+                >
+                </div>
+            </div>
+            <!-- End Slider -->
+        </div>
         <span class="mb-6">
             <div class="my-6 px-5">
                 <h3
@@ -35,9 +66,20 @@ const { event } = Astro.props;
             <div class="mt-auto flex items-center gap-x-3 px-5">
                 <div>
                     <h5 class="text-sm text-gray-800 dark:text-neutral-200">
-                        <date
+                        From <date
                             >{
-                                event.data.date.toLocaleString("en-US", {
+                                event.data.startDate.toLocaleString("en-US", {
+                                    weekday: "long",
+                                    month: "long",
+                                    day: "numeric",
+                                    year: "numeric",
+                                    hour: "numeric",
+                                    minute: "numeric",
+                                })
+                            }</date
+                        > to <date
+                            >{
+                                event.data.endDate.toLocaleString("en-US", {
                                     weekday: "long",
                                     month: "long",
                                     day: "numeric",
@@ -54,10 +96,26 @@ const { event } = Astro.props;
         <span class="mb-6 hidden h-48" id="additional-content">
             <div class="my-6 px-5">
                 <p class="mt-5 text-gray-600 dark:text-neutral-400">
-                    Signup <a
-                        href={event.data.link}
-                        class="underline text-blue-500">here</a
-                    >!<br /><br />
+                    {
+                        event.data.startDate > new Date() ? (
+                            <span>
+                                Signup{" "}
+                                <a
+                                    href={event.data.link}
+                                    class="underline text-blue-500"
+                                >
+                                    here
+                                </a>
+                                !
+                                <>
+                                    <br />
+                                    <br />
+                                </>
+                            </span>
+                        ) : (
+                            <span />
+                        )
+                    }
                     {event.data.text}
                 </p>
             </div>
@@ -91,22 +149,23 @@ const { event } = Astro.props;
         connectedCallback() {
             const card = this.querySelector<HTMLElement>("#card")!;
             const image = this.querySelector<HTMLImageElement>("#image")!;
+            const carouselPagination = this.querySelector<HTMLImageElement>("#carousel-pagination")!;
             const chevron = this.querySelector<SVGElement>("#chevron")!;
             const additionalContent = this.querySelector<HTMLElement>(
                 "#additional-content"
             )!;
 
             card.addEventListener("mouseenter", () => {
-                this.openOrClose(image, chevron, additionalContent);
+                this.openOrClose(image, chevron, carouselPagination, additionalContent);
             });
 
             card.addEventListener("mouseleave", () => {
-                this.openOrClose(image, chevron, additionalContent);
+                this.openOrClose(image, chevron, carouselPagination, additionalContent);
             });
 
             card.addEventListener("click", () => {
                 this.clicked = !this.clicked;
-                this.openOrClose(image, chevron, additionalContent);
+                this.openOrClose(image, chevron, carouselPagination, additionalContent);
             });
 
             const initialHeight = card.offsetHeight;
@@ -116,6 +175,7 @@ const { event } = Astro.props;
         openOrClose(
             image: HTMLImageElement,
             chevron: SVGElement,
+            carouselPagination: HTMLElement,
             additionalContent: HTMLElement
         ) {
             if (this.clicked) {
@@ -123,10 +183,14 @@ const { event } = Astro.props;
                 image.classList.remove("h-48");
                 chevron.classList.add("rotate-180");
                 additionalContent.classList.remove("hidden");
+                carouselPagination.classList.add("opacity-0");
+                carouselPagination.classList.remove("opacity-100");
             } else {
                 image.classList.remove("h-0");
                 image.classList.add("h-48");
                 chevron.classList.remove("rotate-180");
+                carouselPagination.classList.add("opacity-100");
+                carouselPagination.classList.remove("opacity-0");
             }
         }
     }

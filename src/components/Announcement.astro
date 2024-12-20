@@ -4,8 +4,8 @@ import { getCollection } from "astro:content"
 
 const events = await getCollection("events");
 
-const mostRecentUpcommingEvent: CollectionEntry<"events"> | false = events.filter(event => event.data.date > new Date()).reduce((prev: CollectionEntry<"events"> | false, curr) => {
-    return prev === false ? curr : (prev.data.date < curr.data.date ? prev : curr); 
+const mostRecentUpcommingEvent: CollectionEntry<"events"> | false = events.filter(event => event.data.startDate > new Date()).reduce((prev: CollectionEntry<"events"> | false, curr) => {
+    return prev === false ? curr : (prev.data.startDate < curr.data.startDate ? prev : curr); 
 }, false);
 ---
 

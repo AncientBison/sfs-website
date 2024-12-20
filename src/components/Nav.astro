@@ -1,11 +1,13 @@
 ---
 import Announcement from "./Announcement.astro";
+import LogoImage from "../assets/sfs_logo.png";
+import { Image } from "astro:assets";
 ---
 
 <!-- ========== HEADER ========== -->
 <Announcement />
 <header
-    class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-white border-b border-gray-200 dark:bg-neutral-800 dark:border-neutral-700"
+    class="sticky top-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-white border-b border-gray-200 dark:bg-neutral-800 dark:border-neutral-700"
 >
     <nav
         class="relative max-w-[85rem] w-full mx-auto md:flex md:items-center md:justify-between md:gap-3 py-2 px-4 sm:px-6 lg:px-8"
@@ -14,7 +16,8 @@ import Announcement from "./Announcement.astro";
             <a
                 class="flex-none font-semibold text-2xl text-black focus:outline-none focus:opacity-80 dark:text-white"
                 href="/"
-                aria-label="STEM For Society">STEM For Society</a
+                aria-label="STEM for Society">
+                <Image src={LogoImage} alt="" class="inline h-12 w-auto mr-4" />STEM for Society</a
             >
 
             <!-- Collapse Button -->

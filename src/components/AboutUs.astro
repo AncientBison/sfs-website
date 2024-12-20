@@ -18,7 +18,7 @@ const members = await getCollection("members");
     <!-- End Title -->
 
     <!-- Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <!-- End Col -->
 
         {members.map((member) => <AboutUsPerson member={member} />)}
