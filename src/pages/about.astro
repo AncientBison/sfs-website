@@ -9,12 +9,11 @@ import { getCollection } from "astro:content";
 const sections = await getCollection("sections");
 ---
 
-<Layout>
+<Layout class="bg-blue-100 dark:bg-gray-900">
     <WholeTeam />
-    <hr class="my-10 lg:my-14 border-transparent" />
     <MissionStatement />
     {sections.map(section => (
-        <hr class="my-10 lg:my-14 border-blue-600 border-[3px] max-w-[85rem] w-full mx-auto" />
+        <hr class="first-of-type:mb-5 first-of-type:my-0 lg:first-of-type:mb-7 my-10 lg:my-14 border-blue-600 border-[3px] max-w-[85rem] w-full mx-auto" />
         <Section data={section} />
     ))}
 	<hr class="my-10 lg:my-14 border-transparent" />

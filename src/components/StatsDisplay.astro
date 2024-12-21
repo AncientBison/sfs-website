@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content"
+import { getCollection } from "astro:content";
 
 const numberOfEventsDone = (await getCollection("events")).length + 3; // TODO: update this, these are elderly home stuff
 const clubMembers = 30;
@@ -7,39 +7,95 @@ const studentsTaught = 60;
 ---
 
 <!-- Features -->
-<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-    <h4 class="text-4xl md:text-5xl font-semibold text-gray-800 dark:text-neutral-200 text-center mb-12">Our Impact</h4>
-    <!-- Grid -->
-    <div class="flex justify-evenly">
-      <!-- Stats -->
-      <div class="flex flex-col items-center">
-        <p class="mt-2 sm:mt-3 text-5xl sm:text-7xl font-bold text-blue-600">{studentsTaught}+</p>
-        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Students Taught</h4>
-      </div>
-      <!-- End Stats -->
-  
-      <!-- Stats -->
-      <div>
-        <p class="mt-2 sm:mt-3 text-5xl sm:text-7xl font-bold text-blue-600">{clubMembers}+</p>
-        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Members</h4>
-      </div>
-      <!-- End Stats -->
-  
-      <!-- Stats -->
-      <div>
-        <p class="mt-2 sm:mt-3 text-5xl sm:text-7xl font-bold text-blue-600">{numberOfEventsDone}+</p>
-        <h4 class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200">Events</h4>
-      </div>
-      <!-- End Stats -->
+<span class="stats-display dark:bg-transparent">
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <h4
+            class="text-4xl md:text-5xl font-semibold text-gray-800 dark:text-neutral-200 text-center mb-12"
+        >
+            Our Impact
+        </h4>
+        <!-- Grid -->
+        <div class="flex justify-evenly">
+            <!-- Stats -->
+            <div class="flex flex-col items-center">
+                <p
+                    class="mt-2 sm:mt-3 text-5xl sm:text-7xl font-bold text-blue-600"
+                >
+                    {studentsTaught}+
+                </p>
+                <h4
+                    class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200"
+                >
+                    Students Taught
+                </h4>
+            </div>
+            <!-- End Stats -->
+
+            <!-- Stats -->
+            <div>
+                <p
+                    class="mt-2 sm:mt-3 text-5xl sm:text-7xl font-bold text-blue-600"
+                >
+                    {clubMembers}+
+                </p>
+                <h4
+                    class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200"
+                >
+                    Members
+                </h4>
+            </div>
+            <!-- End Stats -->
+
+            <!-- Stats -->
+            <div>
+                <p
+                    class="mt-2 sm:mt-3 text-5xl sm:text-7xl font-bold text-blue-600"
+                >
+                    {numberOfEventsDone}+
+                </p>
+                <h4
+                    class="text-lg sm:text-xl font-semibold text-gray-800 dark:text-neutral-200"
+                >
+                    Events
+                </h4>
+            </div>
+            <!-- End Stats -->
+        </div>
+        <!-- End Grid -->
+        <div class="mt-12 text-center">
+            <span>
+                <h4
+                    class="text-6xl sm:text-7xl font-semibold text-gray-800 dark:text-neutral-200 inline"
+                >
+                    With
+                </h4>
+                <p
+                    class="mt-2 sm:mt-3 text-6xl sm:text-7xl font-bold text-blue-600 inline"
+                >
+                    1
+                </p>
+                <h4
+                    class="text-6xl sm:text-7xl font-semibold text-gray-800 dark:text-neutral-200 inline"
+                >
+                    Mission
+                </h4>
+            </span>
+            <p
+                class="mt-1 text-gray-500 dark:text-neutral-500 text-3xl w-3/5 mx-auto"
+            >
+                to increase <span class="text-blue-600 font-semibold"
+                    >STEM literacy</span
+                > and provide access to <span
+                    class="text-blue-600 font-semibold">STEM curricula</span
+                > for all demographics within our community
+            </p>
+        </div>
     </div>
-    <!-- End Grid -->
-    <div class="mt-12 text-center">
-      <span>
-        <h4 class="text-6xl sm:text-7xl font-semibold text-gray-800 dark:text-neutral-200 inline">With </h4>
-        <p class="mt-2 sm:mt-3 text-6xl sm:text-7xl font-bold text-blue-600 inline"> 1 </p>
-        <h4 class="text-6xl sm:text-7xl font-semibold text-gray-800 dark:text-neutral-200 inline">Mission</h4>
-      </span>
-      <p class="mt-1 text-gray-500 dark:text-neutral-500 text-3xl w-3/5 mx-auto">Our mission is to <span class="text-blue-600 font-semibold">educate</span> our community, and <span class="text-blue-600 font-semibold">increase access</span> across the demographics, about STEM topics.</p>
-    </div>
-  </div>
-  <!-- End Features -->
+    <!-- End Features -->
+</span>
+
+<style>
+    .stats-display {
+        background: linear-gradient(to bottom, transparent, white 10% 90%, transparent);
+    }
+</style>

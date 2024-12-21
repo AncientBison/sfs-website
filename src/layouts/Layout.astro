@@ -3,12 +3,14 @@ import Footer from "@component/Footer";
 import Nav from "@component/Nav";
 import { SITE_TITLE } from "@consts";
 import "aos/dist/aos.css";
+import type { HTMLAttributes } from "astro/types";
 
 interface Props {
     showForm?: boolean;
+    class?: HTMLAttributes<"body">["class"];
 }
 
-const { showForm = false } = Astro.props;
+const { showForm = false, class: classes = "" } = Astro.props;
 ---
 
 <html lang="en" class="h-full">
@@ -19,7 +21,7 @@ const { showForm = false } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>{SITE_TITLE}</title>
     </head>
-    <body class="overflow-x-hidden h-fit w-full flex flex-col dark:bg-gray-900">
+    <body class:list={["overflow-x-hidden h-fit w-full flex flex-col dark:bg-gray-900", classes]}>
         <Nav />
         <slot />
         <Footer showForm={showForm} />
