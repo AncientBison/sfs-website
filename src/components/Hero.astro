@@ -5,9 +5,9 @@ import HeroImage from "@assets/germs/germs_3.jpeg";
 ---
 
 <!-- Hero -->
-<span class="flex">
+<span class="grid grid-cols-1 md:grid-cols-2">
 <div
-    class="relative w-1/2 bg-gradient-to-b from-blue-50 via-blue-100 to-white origin-top-left dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+    class="relative bg-gradient-to-b from-blue-50 via-blue-100 to-white origin-top-left dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
 >
     <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
         <div class="max-w-2xl text-center mx-auto">
@@ -51,7 +51,7 @@ import HeroImage from "@assets/germs/germs_3.jpeg";
         </div>
     </div>
 </div>
-<Image id="hero-image" class="w-1/2 inline border-l-2 border-black dark:border-white object-center object-cover" src={HeroImage} alt="" />
+<Image id="hero-image" class="inline border-l-2 border-black dark:border-white object-center object-cover" src={HeroImage} alt="" />
 </span>
 
 <style>

@@ -3,12 +3,20 @@ import Layout from "@layout/Layout";
 import AboutUs from "@component/AboutUs";
 import WholeTeam from "@component/WholeTeam";
 import MissionStatement from "@component/MissionStatement";
+import Section from "@component/Section";
+import { getCollection } from "astro:content";
+
+const sections = await getCollection("sections");
 ---
 
 <Layout>
     <WholeTeam />
-	<hr class="my-10 lg:my-14" />
+    <hr class="my-10 lg:my-14 border-transparent" />
     <MissionStatement />
-	<hr class="my-10 lg:my-14" />
+    {sections.map(section => (
+        <hr class="my-10 lg:my-14 border-blue-600 border-[3px] max-w-[85rem] w-full mx-auto" />
+        <Section data={section} />
+    ))}
+	<hr class="my-10 lg:my-14 border-transparent" />
     <AboutUs />
 </Layout>

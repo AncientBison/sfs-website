@@ -5,8 +5,22 @@
     "endDate": "2024-11-10T19:30:00.000Z",
     "text": "Led by Daniel G, Ilan B",
     "link": "#",
-    "images": [{
-        "src": "@assets/scratch/scratch_1.jpeg",
-        "alt": "Scratch Programming event"
-    }]
+    "images": [
+        {
+            "src": "@assets/scratch/scratch_1.jpeg",
+            "alt": "Scratch Programming event"
+        },
+        {
+            "src": "@assets/scratch/scratch_2.jpeg",
+            "alt": "Scratch Programming event"
+        },
+        {
+            "src": "@assets/scratch/scratch_3.jpeg",
+            "alt": "Scratch Programming event"
+        },
+        {
+            "src": "@assets/scratch/scratch_4.jpeg",
+            "alt": "Scratch Programming event"
+        }
+    ]
 }

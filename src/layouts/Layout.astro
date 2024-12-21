@@ -3,24 +3,33 @@ import Footer from "@component/Footer";
 import Nav from "@component/Nav";
 import { SITE_TITLE } from "@consts";
 import "aos/dist/aos.css";
+
+interface Props {
+    showForm?: boolean;
+}
+
+const { showForm = false } = Astro.props;
 ---
 
 <html lang="en" class="h-full">
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/icon.png" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{SITE_TITLE}</title>
     </head>
-    <body class="h-fit w-full flex flex-col dark:bg-gray-900">
+    <body class="overflow-x-hidden h-fit w-full flex flex-col dark:bg-gray-900">
         <Nav />
         <slot />
-        <Footer />
+        <Footer showForm={showForm} />
     </body>
     <script>
         import "preline/dist/preline.js";
-        import AOS from "aos";
-        AOS.init();
+        import AOS from "aos";        
+        AOS.init({
+            startEvent: "load",
+            once: false
+        });
     </script>
 </html>

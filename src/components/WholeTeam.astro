@@ -1,25 +1,34 @@
+---
+import { Image } from "astro:assets";
+import WholeTeamImage from "@assets/scratch/scratch_1.jpeg";
+---
+
 <!-- Features -->
-<div class="max-w-[85rem] px-4 pt-5 sm:px-6 lg:px-8 lg:pt-7 mx-auto">
+<div
+    class="max-w-[85rem] px-4 pt-5 sm:px-6 lg:px-8 lg:pt-7 mx-auto"
+  >
     <!-- Grid -->
-    <div class="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
-      <div>
-        <img class="rounded-xl" src="https://images.unsplash.com/photo-1648737963503-1a26da876aca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&h=900&q=80" alt="Features Image">
-      </div>
+    <div class="flex gap-32">
+
       <!-- End Col -->
   
-      <div class="mt-5 sm:mt-10 lg:mt-0">
+      <div class="mt-5 sm:mt-10 lg:mt-0 w-1/4">
         <div class="space-y-6 sm:space-y-8">
           <!-- Title -->
           <div class="space-y-2 md:space-y-4">
-            <h2 class="font-bold text-3xl lg:text-4xl text-gray-800 dark:text-neutral-200">
-              Who we are
+            <h2 class="font-bold text-4xl md:text-5xl text-gray-800 dark:text-neutral-200">
+              Welcome to STEM for Society
             </h2>
-            <p class="text-gray-500 dark:text-neutral-500">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem nemo mollitia exercitationem perspiciatis veniam vitae fugiat, ducimus cumque tempora error rerum assumenda commodi. Perferendis totam sequi asperiores cumque possimus accusamus dolorem ad. Fugit quo fuga repudiandae culpa sit delectus necessitatibus facere sed quod expedita, eveniet iusto ullam cupiditate! Cum quos molestias sint repudiandae ullam suscipit sapiente quia dolor repellat laboriosam odit provident consectetur excepturi, nihil dignissimos eveniet nobis modi recusandae corporis maxime earum cumque quasi quo! Nulla necessitatibus aut voluptatem laudantium. Saepe tempora numquam maxime iusto sit explicabo consequuntur ab, qui eum exercitationem, minus, est atque ducimus animi facilis? Laudantium veniam similique exercitationem, in totam placeat temporibus nihil atque animi consequuntur perferendis facere voluptatibus facilis labore? Eveniet impedit nesciunt quaerat sequi ducimus dolorem deleniti veniam, tempora, at placeat rem magnam fugiat asperiores voluptatem nam inventore? Nostrum harum velit repellendus optio. Blanditiis, id incidunt porro commodi itaque doloribus optio voluptatum culpa nihil illo iusto in tenetur deserunt ea facilis similique ipsum ducimus, molestias eveniet aperiam, hic provident?
+            <p class="text-lg text-gray-500 dark:text-neutral-500">
+              Welcome to a world of discovery and innovation! STEM for Society is a student-led nonprofit organization dedicated to bridging the gap in STEM education and opportunities within our community. Our mission is to inspire and empower individuals of all ages through accessible, engaging, and impactful STEM programs. Join us as we transform curiosity into lifelong learning and drive change through science, technology, engineering, and mathematics.
             </p>
           </div>
           <!-- End Title -->
         </div>
+      </div>
+
+      <div class="w-3/5">
+        <Image class="rounded-xl" src={WholeTeamImage} alt="Our Team" />
       </div>
       <!-- End Col -->
     </div>

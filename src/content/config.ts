@@ -34,6 +34,13 @@ const eventCollection = defineCollection({
         }),
 });
 
+const sectionCollection = defineCollection({
+    type: "content",
+    schema: z.object({
+        title: z.string(),
+    }),
+});
+
 const faqCollection = defineCollection({
     type: "data",
     schema: z.object({
@@ -69,5 +76,6 @@ export const collections = {
     testimonials: testimonialsCollection,
     members: membersCollection,
     events: eventCollection,
-    faqs: faqCollection
+    faqs: faqCollection,
+    sections: sectionCollection,
 };

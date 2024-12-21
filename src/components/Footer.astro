@@ -1,8 +1,18 @@
-<span class="max-w-[85rem]">
-    <footer
-        class="mt-auto w-full py-10 px-4 sm:px-6 lg:px-8 mx-auto border-t grid grid-cols-2 sm:grid-cols-3"
-    >
-        <div>
+---
+interface Props {
+    showForm: boolean;
+}
+
+const { showForm } = Astro.props;
+---
+{showForm && (
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSclFQAxakDF_LyMsML97wYBQmA45siSRs5K87AZEHsH7nyBRg/viewform?embedded=true" class="w-full h-[350px]">Loading…</iframe>
+)}
+<footer
+    class="mt-auto w-full py-10 px-4 sm:px-6 lg:px-8 mx-auto border-t grid grid-cols-1 sm:grid-cols-2 gap-x-10"
+>
+    <!-- <span class=""> -->
+        <div class="justify-self-end">
             <a
                 class="text-3xl font-semibold text-black dark:text-white"
                 href="#"
@@ -20,106 +30,80 @@
                 </p>
             </div>
         </div>
-
-            <div class="flex flex-col">
-                <a
-                    class="text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                    href="/about">About Us</a
+        <div class="flex justify-left flex-col">
+            <!-- Facebook -->
+            <a
+                href="https://www.facebook.com/people/STEM-for-Society/61568480972350/"
+                class="flex text-black dark:text-white space-x-1"
+            >
+                <svg
+                    class="shrink-0 size-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
                 >
-                <a
-                    class="text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                    href="/contact">Contact</a
-                >
-                <a
-                    class="text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                    href="/events">Events</a
-                >
-                <a
-                    class="text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
-                    href="/faq">FAQ</a
-                >
-            </div>
-
-            <div class="flex justify-left flex-col">
-                <!-- Facebook -->
-                <a
-                    href="https://www.facebook.com/people/STEM-for-Society/61568480972350/"
-                    class="flex text-black dark:text-white space-x-1"
-                >
-                    <svg
-                        class="shrink-0 size-5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                        ></path>
-                    </svg>
-                    <p>
-                        Facebook: <p class="underline text-nowrap">
-                            STEM-for-Society
-                        </p>
+                    <path
+                        d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    ></path>
+                </svg>
+                <p>
+                    Facebook: <p class="underline text-nowrap">
+                        STEM-for-Society
                     </p>
-                </a>
-                <!-- Instagram -->
-                <a
-                    href="https://www.instagram.com/stem_for_society_nhs/"
-                    class="flex text-black dark:text-white space-x-1"
+                </p>
+            </a>
+            <!-- Instagram -->
+            <a
+                href="https://www.instagram.com/stem_for_society_nhs/"
+                class="flex text-black dark:text-white space-x-1"
+            >
+                <svg
+                    class="shrink-0 size-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    viewBox="0 0 24 24"
                 >
-                    <svg
-                        class="shrink-0 size-5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        viewBox="0 0 24 24"
-                    >
-                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"
-                        ></rect><path
-                            d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-                        ></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"
-                        ></line>
-                    </svg>
-                    <p>
-                        Instagram: <p class="underline text-nowrap">
-                            stem_for_society_nhs
-                        </p>
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"
+                    ></rect><path
+                        d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                    ></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                </svg>
+                <p>
+                    Instagram: <p class="underline text-nowrap">
+                        stem_for_society_nhs
                     </p>
-                </a>
-                <!-- Mail -->
-                <a
-                    href="mailto:stemforsociety@gmail.com"
-                    class="flex text-black dark:text-white space-x-1"
+                </p>
+            </a>
+            <!-- Mail -->
+            <a
+                href="mailto:stemforsociety@gmail.com"
+                class="flex text-black dark:text-white space-x-1"
+            >
+                <svg
+                    class="shrink-0 size-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    viewBox="0 0 24 24"
                 >
-                    <svg
-                        class="shrink-0 size-5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        viewBox="0 0 24 24"
-                    >
-                        <rect width="20" height="16" x="2" y="4" rx="2"
-                        ></rect><path
-                            d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
-                        ></path>
-                    </svg>
-                    <p class="underline text-nowrap">
-                        stemforsociety@gmail.com
-                    </p>
-                </a>
-            </div>
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect><path
+                        d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                <p class="underline text-nowrap">stemforsociety@gmail.com</p>
+            </a>
         </div>
-    </footer>
-</span>
+    <!-- </span> -->
+</footer>

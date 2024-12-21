@@ -6,7 +6,7 @@
         { "type": "email", "text": "eh262@students.needham.k12.ma.us" }
     ],
     "image": {
-        "src": "@assets/emma.png",
+        "src": "@assets/emma.jpeg",
         "alt": "Beethoven being beethoven"
     } 
 }
